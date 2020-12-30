@@ -8,7 +8,8 @@ import pyjokes
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices)
+engine.setProperty('voice', voices[10].id)
+engine.setProperty('rate', 160)
 
 
 def talk(text):
@@ -17,6 +18,7 @@ def talk(text):
 
 
 def take_command():
+    command = ''
     try:
         with sr.Microphone() as source:
             print('listening...')
@@ -24,9 +26,9 @@ def take_command():
             command = listener.recognize_google(voice)
             command = command.lower()
             if 'alexa' in command:
-                command = command.replace('alexa', '')
+                command = command.replace('replica', '')
                 print(command)
-    except:
+    except():
         pass
     return command
 
@@ -41,15 +43,16 @@ def run_alexa():
     elif 'time' in command:
         time = datetime.datetime.now().strftime('%I:%M %p')
         talk('Current time is ' + time)
-    elif 'who the heck is' in command:
-        person = command.replace('who the heck is', '')
+    elif 'who is' in command:
+        person = command.replace('who is', '')
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
-    elif 'date' in command:
-        talk('sorry, I have a headache')
-    elif 'are you single' in command:
-        talk('I am in a relationship with wifi')
+    elif 'date' or 'day' in command:
+        date = datetime.date.today().strftime('%A')
+        talk('today is' + date)
+    elif 'are you a robot' in command:
+        talk('I am very special to wifi')
     elif 'joke' in command:
         talk(pyjokes.get_joke())
     else:
