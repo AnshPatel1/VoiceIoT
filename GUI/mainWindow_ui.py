@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from voice_assistant.replica import *
 
 
 class Ui_MainWindow(object):
@@ -428,7 +429,7 @@ class Ui_MainWindow(object):
         # Custom code below
 
         self.assistant_button.clicked.connect(lambda: self.onVoiceAssistantClickEventHandler())
-
+        self.send_button.clicked.connect(self.sendAPIRequests)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -461,16 +462,16 @@ class Ui_MainWindow(object):
 
     def updateUserVoiceInputArea(self, text):
         self.user_input_textedit.setHtml(("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-                                            "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n "
-                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-                                            "type=\"text/css\">\n "
-                                            "p, li { white-space: pre-wrap; }\n"
-                                            "</style></head><body style=\" font-family:\'Geneva\'; "
-                                            "font-size:20pt; font-weight:400; font-style:normal;\">\n "
-                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; "
-                                            "margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-                                            "text-indent:0px;\"><span style=\" color:#ffffff;\">"
-                                            "" + text + "</span></p></body></html>"))
+                                          "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n "
+                                          "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+                                          "type=\"text/css\">\n "
+                                          "p, li { white-space: pre-wrap; }\n"
+                                          "</style></head><body style=\" font-family:\'Geneva\'; "
+                                          "font-size:20pt; font-weight:400; font-style:normal;\">\n "
+                                          "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; "
+                                          "margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                                          "text-indent:0px;\"><span style=\" color:#ffffff;\">"
+                                          "" + text + "</span></p></body></html>"))
 
     def onVoiceAssistantClickEventHandler(self):
         if self.assistant_state_label.text() == 'LISTENING...':
@@ -482,6 +483,20 @@ class Ui_MainWindow(object):
                                                 'x2:0.975369, y2:0.0340909, stop:0 rgba(0, 0, 40, 255), stop:0.852217'
                                                 ' rgba(40, 3, 50, 255));\n'
                                                 'border-radius: 90')
+
+    def sendAPIRequests(self):
+        if self.channel_selection.currentText() != '':
+            MODE = ''
+            channel_id = self.channel_selection.currentText()[8:]
+            print(channel_id)
+            value = self.value_line_edit.text()
+            print(value != '')
+            if self.radioButton.isChecked():
+                MODE = 'D'
+            if self.radioButton_2.isChecked():
+                MODE = 'A'
+            if MODE != '' and self.channel_selection.currentText() != ' ' and value != '':
+                pass
 
 if __name__ == "__main__":
     import sys
