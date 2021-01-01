@@ -262,30 +262,11 @@ class Ui_MainWindow(object):
                                              "")
         self.channel_selection.setEditable(True)
         self.channel_selection.setObjectName("channel_selection")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
-        self.channel_selection.addItem("")
+        self.channel_selection.addItem(" ")
+        for channel_id in range(1, 28):
+            if channel_id not in [1, 14, 15]:
+                self.channel_selection.addItem("CHANNEL: {}".format(channel_id))
+
         self.horizontalLayout_4.addWidget(self.channel_selection)
         self.verticalLayout_8.addWidget(self.frame_10)
         self.frame_11 = QtWidgets.QFrame(self.frame_9)
@@ -503,7 +484,6 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", " Ansh Patel · All Rights Reserved"))
 
 
-import resource_rc
 
 if __name__ == "__main__":
     import sys
