@@ -48,9 +48,9 @@ def run_alexa():
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
-    elif 'date' or 'day' in command:
-        date = datetime.date.today().strftime('%A')
-        talk('today is' + date)
+    # elif 'date' or 'day' in command:
+    #     date = datetime.date.today().strftime('%A')
+    #     talk('today is' + date)
     elif 'are you a robot' in command:
         talk('I am very special to wifi')
     elif 'joke' in command:
