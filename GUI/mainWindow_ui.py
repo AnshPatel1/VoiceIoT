@@ -100,41 +100,41 @@ class Ui_MainWindow(object):
         self.frame_5.setObjectName("frame_5")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.frame_5)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.pushButton = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton.setMinimumSize(QtCore.QSize(180, 180))
-        self.pushButton.setMaximumSize(QtCore.QSize(180, 180))
-        self.pushButton.setStyleSheet("\n"
-                                      "QPushButton\n"
-                                      "{\n"
-                                      "border-radius: 90px;\n"
-                                      "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(3, 4, 64, 255), stop:0.852217 rgba(49, 3, 61, 255));\n"
-                                      "\n"
-                                      "}\n"
-                                      "\n"
-                                      "QPushButton:hover:!pressed\n"
-                                      "{\n"
-                                      "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(2, 4, 48, 255), stop:0.852217 rgba(40, 3, 50, 255))\n"
-                                      "\n"
-                                      "}")
-        self.pushButton.setText("")
+        self.assistant_button = QtWidgets.QPushButton(self.frame_5)
+        self.assistant_button.setMinimumSize(QtCore.QSize(180, 180))
+        self.assistant_button.setMaximumSize(QtCore.QSize(180, 180))
+        self.assistant_button.setStyleSheet("\n"
+                                            "QPushButton\n"
+                                            "{\n"
+                                            "border-radius: 90px;\n"
+                                            "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(3, 4, 64, 255), stop:0.852217 rgba(49, 3, 61, 255));\n"
+                                            "\n"
+                                            "}\n"
+                                            "\n"
+                                            "QPushButton:hover:!pressed\n"
+                                            "{\n"
+                                            "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(2, 4, 48, 255), stop:0.852217 rgba(40, 3, 50, 255))\n"
+                                            "\n"
+                                            "}")
+        self.assistant_button.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/assets/assets/white-mic.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton.setIcon(icon)
-        self.pushButton.setIconSize(QtCore.QSize(140, 140))
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout_6.addWidget(self.pushButton)
-        self.label_6 = QtWidgets.QLabel(self.frame_5)
+        icon.addPixmap(QtGui.QPixmap("assets/white-mic.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.assistant_button.setIcon(icon)
+        self.assistant_button.setIconSize(QtCore.QSize(140, 140))
+        self.assistant_button.setObjectName("assistant_button")
+        self.verticalLayout_6.addWidget(self.assistant_button)
+        self.assistant_state_label = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setFamily("Earth Orbiter")
         font.setPointSize(20)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet("color: white;\n"
-                                   "font: 20pt \"Earth Orbiter\";")
-        self.label_6.setObjectName("label_6")
-        self.verticalLayout_6.addWidget(self.label_6, 0, QtCore.Qt.AlignHCenter)
+        self.assistant_state_label.setFont(font)
+        self.assistant_state_label.setStyleSheet("color: white;\n"
+                                                 "font: 20pt \"Earth Orbiter\";")
+        self.assistant_state_label.setObjectName("assistant_state_label")
+        self.verticalLayout_6.addWidget(self.assistant_state_label, 0, QtCore.Qt.AlignHCenter)
         self.verticalLayout_4.addWidget(self.frame_5, 0, QtCore.Qt.AlignHCenter)
         self.frame_6 = QtWidgets.QFrame(self.frame_4)
         self.frame_6.setMinimumSize(QtCore.QSize(0, 0))
@@ -162,20 +162,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.textEdit = QtWidgets.QTextEdit(self.frame_8)
+        self.user_input_textedit = QtWidgets.QTextEdit(self.frame_8)
         font = QtGui.QFont()
         font.setFamily("Geneva")
         font.setPointSize(20)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.textEdit.setFont(font)
-        self.textEdit.setStyleSheet("background: transparent;\n"
-                                    "color: white;\n"
-                                    "font: 20pt \"Geneva\";")
-        self.textEdit.setReadOnly(True)
-        self.textEdit.setObjectName("textEdit")
-        self.horizontalLayout_2.addWidget(self.textEdit)
+        self.user_input_textedit.setFont(font)
+        self.user_input_textedit.setStyleSheet("background: transparent;\n"
+                                               "color: white;\n"
+                                               "font: 20pt \"Geneva\";")
+        self.user_input_textedit.setReadOnly(True)
+        self.user_input_textedit.setObjectName("user_input_textedit")
+        self.horizontalLayout_2.addWidget(self.user_input_textedit)
         self.verticalLayout_7.addWidget(self.frame_8)
         self.frame_9 = QtWidgets.QFrame(self.frame_6)
         self.frame_9.setMinimumSize(QtCore.QSize(0, 200))
@@ -194,99 +194,99 @@ class Ui_MainWindow(object):
         self.frame_10.setObjectName("frame_10")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_10)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.label_7 = QtWidgets.QLabel(self.frame_10)
-        self.label_7.setMaximumSize(QtCore.QSize(48, 16777215))
+        self.gpio_label = QtWidgets.QLabel(self.frame_10)
+        self.gpio_label.setMaximumSize(QtCore.QSize(48, 16777215))
         font = QtGui.QFont()
         font.setFamily("Geneva")
         font.setPointSize(16)
-        self.label_7.setFont(font)
-        self.label_7.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_7.setObjectName("label_7")
-        self.horizontalLayout_4.addWidget(self.label_7)
-        self.NewClientStateSelection = QtWidgets.QComboBox(self.frame_10)
-        self.NewClientStateSelection.setEnabled(True)
+        self.gpio_label.setFont(font)
+        self.gpio_label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.gpio_label.setObjectName("gpio_label")
+        self.horizontalLayout_4.addWidget(self.gpio_label)
+        self.channel_selection = QtWidgets.QComboBox(self.frame_10)
+        self.channel_selection.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.NewClientStateSelection.sizePolicy().hasHeightForWidth())
-        self.NewClientStateSelection.setSizePolicy(sizePolicy)
-        self.NewClientStateSelection.setMinimumSize(QtCore.QSize(0, 40))
-        self.NewClientStateSelection.setMaximumSize(QtCore.QSize(310, 16777215))
+        sizePolicy.setHeightForWidth(self.channel_selection.sizePolicy().hasHeightForWidth())
+        self.channel_selection.setSizePolicy(sizePolicy)
+        self.channel_selection.setMinimumSize(QtCore.QSize(0, 40))
+        self.channel_selection.setMaximumSize(QtCore.QSize(310, 16777215))
         font = QtGui.QFont()
         font.setFamily("Geneva")
         font.setPointSize(15)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.NewClientStateSelection.setFont(font)
-        self.NewClientStateSelection.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.NewClientStateSelection.setStyleSheet("QComboBox{\n"
-                                                   "  border: 2px solid rgb(0, 0, 96);\n"
-                                                   "  border-radius: 20px;\n"
-                                                   "  color: #FFF; \n"
-                                                   "  padding-left: 20px;\n"
-                                                   "  padding-right: 0px;\n"
-                                                   "  background-color:rgb(0, 0, 96);\n"
-                                                   "}\n"
-                                                   "QComboBox::drop-down{\n"
-                                                   "  background-color: transparent;\n"
-                                                   "  width: 40px;\n"
-                                                   "}\n"
-                                                   "QComboBox::down-arrow {\n"
-                                                   "color: white;\n"
-                                                   "}\n"
-                                                   "QComboBox QAbstractItemView {\n"
-                                                   "  border: 1px solid white;\n"
-                                                   "  border-radius: 5px;\n"
-                                                   "  selection-background-color: rgb(0, 0, 96);\n"
-                                                   "  font: 15pt \"Geneva\";\n"
-                                                   "  color: rgb(0, 0, 96);\n"
-                                                   "  selection-color: white;\n"
-                                                   "}\n"
-                                                   "QComboBox QAbstractItemView::item {\n"
-                                                   "  min-height: 50px;\n"
-                                                   "  border: 5px solid white;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QComboBox:disabled {\n"
-                                                   "    background-color: rgb(108, 135, 158);\n"
-                                                   "    border: 2px solid rgb(108, 135, 158);\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QComboBox:editable {\n"
-                                                   "    background-color: rgb(0,0,96);\n"
-                                                   "    padding-right: 15px;\n"
-                                                   "    font: 15pt \"Geneva\";\n"
-                                                   "    color:white;\n"
-                                                   "}\n"
-                                                   "")
-        self.NewClientStateSelection.setEditable(True)
-        self.NewClientStateSelection.setObjectName("NewClientStateSelection")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.NewClientStateSelection.addItem("")
-        self.horizontalLayout_4.addWidget(self.NewClientStateSelection)
+        self.channel_selection.setFont(font)
+        self.channel_selection.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.channel_selection.setStyleSheet("QComboBox{\n"
+                                             "  border: 2px solid rgb(0, 0, 96);\n"
+                                             "  border-radius: 20px;\n"
+                                             "  color: #FFF; \n"
+                                             "  padding-left: 20px;\n"
+                                             "  padding-right: 0px;\n"
+                                             "  background-color:rgb(0, 0, 96);\n"
+                                             "}\n"
+                                             "QComboBox::drop-down{\n"
+                                             "  background-color: transparent;\n"
+                                             "  width: 40px;\n"
+                                             "}\n"
+                                             "QComboBox::down-arrow {\n"
+                                             "color: white;\n"
+                                             "}\n"
+                                             "QComboBox QAbstractItemView {\n"
+                                             "  border: 1px solid white;\n"
+                                             "  border-radius: 5px;\n"
+                                             "  selection-background-color: rgb(0, 0, 96);\n"
+                                             "  font: 15pt \"Geneva\";\n"
+                                             "  color: rgb(0, 0, 96);\n"
+                                             "  selection-color: white;\n"
+                                             "}\n"
+                                             "QComboBox QAbstractItemView::item {\n"
+                                             "  min-height: 50px;\n"
+                                             "  border: 5px solid white;\n"
+                                             "}\n"
+                                             "\n"
+                                             "QComboBox:disabled {\n"
+                                             "    background-color: rgb(108, 135, 158);\n"
+                                             "    border: 2px solid rgb(108, 135, 158);\n"
+                                             "}\n"
+                                             "\n"
+                                             "QComboBox:editable {\n"
+                                             "    background-color: rgb(0,0,96);\n"
+                                             "    padding-right: 15px;\n"
+                                             "    font: 15pt \"Geneva\";\n"
+                                             "    color:white;\n"
+                                             "}\n"
+                                             "")
+        self.channel_selection.setEditable(True)
+        self.channel_selection.setObjectName("channel_selection")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.channel_selection.addItem("")
+        self.horizontalLayout_4.addWidget(self.channel_selection)
         self.verticalLayout_8.addWidget(self.frame_10)
         self.frame_11 = QtWidgets.QFrame(self.frame_9)
         self.frame_11.setMinimumSize(QtCore.QSize(0, 145))
@@ -297,26 +297,26 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.frame_12 = QtWidgets.QFrame(self.frame_11)
-        self.frame_12.setMaximumSize(QtCore.QSize(16777215, 25))
-        self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_12.setObjectName("frame_12")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_12)
+        self.radio_digital = QtWidgets.QFrame(self.frame_11)
+        self.radio_digital.setMaximumSize(QtCore.QSize(16777215, 25))
+        self.radio_digital.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.radio_digital.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.radio_digital.setObjectName("radio_digital")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.radio_digital)
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.radioButton = QtWidgets.QRadioButton(self.frame_12)
+        self.radioButton = QtWidgets.QRadioButton(self.radio_digital)
         self.radioButton.setMaximumSize(QtCore.QSize(100, 16777215))
         self.radioButton.setStyleSheet("color: white")
         self.radioButton.setObjectName("radioButton")
         self.horizontalLayout_3.addWidget(self.radioButton)
-        self.radioButton_2 = QtWidgets.QRadioButton(self.frame_12)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.radio_digital)
         self.radioButton_2.setMaximumSize(QtCore.QSize(90, 35))
         self.radioButton_2.setStyleSheet("color: rgb(255, 255, 255);")
         self.radioButton_2.setObjectName("radioButton_2")
         self.horizontalLayout_3.addWidget(self.radioButton_2)
-        self.verticalLayout_9.addWidget(self.frame_12)
+        self.verticalLayout_9.addWidget(self.radio_digital)
         self.frame_13 = QtWidgets.QFrame(self.frame_11)
         self.frame_13.setMaximumSize(QtCore.QSize(16777215, 59))
         self.frame_13.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -324,63 +324,73 @@ class Ui_MainWindow(object):
         self.frame_13.setObjectName("frame_13")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_13)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label_9 = QtWidgets.QLabel(self.frame_13)
-        self.label_9.setMinimumSize(QtCore.QSize(0, 0))
-        self.label_9.setMaximumSize(QtCore.QSize(63, 16777215))
+        self.value_label = QtWidgets.QLabel(self.frame_13)
+        self.value_label.setMinimumSize(QtCore.QSize(0, 0))
+        self.value_label.setMaximumSize(QtCore.QSize(63, 16777215))
         font = QtGui.QFont()
         font.setFamily("Geneva")
         font.setPointSize(16)
-        self.label_9.setFont(font)
-        self.label_9.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_9.setObjectName("label_9")
-        self.horizontalLayout_5.addWidget(self.label_9)
-        self.NewClientName = QtWidgets.QLineEdit(self.frame_13)
-        self.NewClientName.setEnabled(True)
+        self.value_label.setFont(font)
+        self.value_label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.value_label.setObjectName("value_label")
+        self.horizontalLayout_5.addWidget(self.value_label)
+        self.value_line_edit = QtWidgets.QLineEdit(self.frame_13)
+        self.value_line_edit.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.NewClientName.sizePolicy().hasHeightForWidth())
-        self.NewClientName.setSizePolicy(sizePolicy)
-        self.NewClientName.setMinimumSize(QtCore.QSize(0, 40))
-        self.NewClientName.setMaximumSize(QtCore.QSize(280, 40))
+        sizePolicy.setHeightForWidth(self.value_line_edit.sizePolicy().hasHeightForWidth())
+        self.value_line_edit.setSizePolicy(sizePolicy)
+        self.value_line_edit.setMinimumSize(QtCore.QSize(0, 40))
+        self.value_line_edit.setMaximumSize(QtCore.QSize(280, 40))
         font = QtGui.QFont()
-        font.setFamily("Geneva")
+        font.setFamily("Product Sans")
         font.setPointSize(11)
-        self.NewClientName.setFont(font)
-        self.NewClientName.setStyleSheet("QLineEdit {\n"
-                                         "border: 2px solid rgb(0, 0, 96);\n"
-                                         "border-radius: 20px;\n"
-                                         "color: #FFF; \n"
-                                         "padding-left: 20px;\n"
-                                         "padding-right: 20px;\n"
-                                         "background-color:rgb(0, 0, 96);\n"
-                                         "} \n"
-                                         "\n"
-                                         "QLineEdit:enabled {\n"
-                                         "border: 2px solid rgb(0, 0, 96);\n"
-                                         "border-radius: 20px;\n"
-                                         "color: #FFF; \n"
-                                         "padding-left: 20px;\n"
-                                         "padding-right: 20px;\n"
-                                         "background-color:rgb(0, 0, 96);\n"
-                                         "} \n"
-                                         "\n"
-                                         "\n"
-                                         "QLineEdit:disabled {\n"
-                                         "    background-color: rgb(108, 135, 158);\n"
-                                         "    border: 2px solid rgb(108, 135, 158);\n"
-                                         "}\n"
-                                         "\n"
-                                         "QLineEdit:hover { \n"
-                                         "border: 2px solid rgb(15, 102, 255); \n"
-                                         "}\n"
-                                         "\n"
-                                         "QLineEdit:focus {\n"
-                                         " border: 2px solid rgb(85, 170, 255);\n"
-                                         " background-color: rgb(0, 0, 96);\n"
-                                         "}")
-        self.NewClientName.setObjectName("NewClientName")
-        self.horizontalLayout_5.addWidget(self.NewClientName)
+        self.value_line_edit.setFont(font)
+        self.value_line_edit.setStyleSheet("QLineEdit {\n"
+                                           "border: 2px solid rgb(0, 0, 96);\n"
+                                           "border-radius: 20px;\n"
+                                           "color: #FFF; \n"
+                                           "padding-left: 20px;\n"
+                                           "padding-right: 20px;\n"
+                                           "background-color:rgb(0, 0, 96);\n"
+                                           "} \n"
+                                           "\n"
+                                           "QLineEdit:enabled {\n"
+                                           "border: 2px solid rgb(0, 0, 96);\n"
+                                           "border-radius: 20px;\n"
+                                           "color: #FFF; \n"
+                                           "padding-left: 20px;\n"
+                                           "padding-right: 20px;\n"
+                                           "background-color:rgb(0, 0, 96);\n"
+                                           "} \n"
+                                           "\n"
+                                           "\n"
+                                           "QLineEdit:disabled {\n"
+                                           "    background-color: rgb(108, 135, 158);\n"
+                                           "    border: 2px solid rgb(108, 135, 158);\n"
+                                           "}\n"
+                                           "\n"
+                                           "QLineEdit:hover { \n"
+                                           "border: 2px solid rgb(15, 102, 255); \n"
+                                           "}\n"
+                                           "\n"
+                                           "QLineEdit:focus {\n"
+                                           " border: 2px solid rgb(85, 170, 255);\n"
+                                           " background-color: rgb(0, 0, 96);\n"
+                                           "}")
+        self.value_line_edit.setObjectName("value_line_edit")
+        self.horizontalLayout_5.addWidget(self.value_line_edit)
+        self.send_button = QtWidgets.QPushButton(self.frame_13)
+        self.send_button.setMinimumSize(QtCore.QSize(35, 35))
+        self.send_button.setMaximumSize(QtCore.QSize(35, 35))
+        self.send_button.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("assets/send.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.send_button.setIcon(icon1)
+        self.send_button.setIconSize(QtCore.QSize(35, 35))
+        self.send_button.setObjectName("send_button")
+        self.horizontalLayout_5.addWidget(self.send_button)
         self.verticalLayout_9.addWidget(self.frame_13)
         self.verticalLayout_8.addWidget(self.frame_11)
         self.verticalLayout_7.addWidget(self.frame_9)
@@ -395,19 +405,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.label_5 = QtWidgets.QLabel(self.frame_7)
+        self.raspbery_status_toast = QtWidgets.QLabel(self.frame_7)
         font = QtGui.QFont()
         font.setFamily("Futura Bk BT")
         font.setPointSize(23)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.label_5.setFont(font)
-        self.label_5.setStyleSheet("font: 23pt \"Futura Bk BT\";\n"
-                                   "color: rgb(34, 255, 61)")
-        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_5.setObjectName("label_5")
-        self.verticalLayout_5.addWidget(self.label_5)
+        self.raspbery_status_toast.setFont(font)
+        self.raspbery_status_toast.setStyleSheet("font: 23pt \"Futura Bk BT\";\n"
+                                                 "color: rgb(34, 255, 61)")
+        self.raspbery_status_toast.setAlignment(QtCore.Qt.AlignCenter)
+        self.raspbery_status_toast.setObjectName("raspbery_status_toast")
+        self.verticalLayout_5.addWidget(self.raspbery_status_toast)
         self.verticalLayout_4.addWidget(self.frame_7)
         self.verticalLayout_2.addWidget(self.frame_4)
         self.frame = QtWidgets.QFrame(self.dropShadowFrame)
@@ -453,42 +463,42 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "FRIDAY"))
         self.label_2.setText(_translate("MainWindow", "A HACKABLE IOT ASSISTANT"))
-        self.label_6.setText(_translate("MainWindow", "LISTENING..."))
-        self.textEdit.setHtml(_translate("MainWindow",
-                                         "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                         "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                         "p, li { white-space: pre-wrap; }\n"
-                                         "</style></head><body style=\" font-family:\'Geneva\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
-                                         "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">START SPEAKING SOMETHING</span></p></body></html>"))
-        self.label_7.setText(_translate("MainWindow", "GPIO:"))
-        self.NewClientStateSelection.setItemText(0, _translate("MainWindow", "CHANNEL 2"))
-        self.NewClientStateSelection.setItemText(1, _translate("MainWindow", "CHANNEL 3"))
-        self.NewClientStateSelection.setItemText(2, _translate("MainWindow", "CHANNEL 4"))
-        self.NewClientStateSelection.setItemText(3, _translate("MainWindow", "CHANNEL 5"))
-        self.NewClientStateSelection.setItemText(4, _translate("MainWindow", "CHANNEL 6"))
-        self.NewClientStateSelection.setItemText(5, _translate("MainWindow", "CHANNEL 7"))
-        self.NewClientStateSelection.setItemText(6, _translate("MainWindow", "CHANNEL 8"))
-        self.NewClientStateSelection.setItemText(7, _translate("MainWindow", "CHANNEL 9"))
-        self.NewClientStateSelection.setItemText(8, _translate("MainWindow", "CHANNEL 10"))
-        self.NewClientStateSelection.setItemText(9, _translate("MainWindow", "CHANNEL 11"))
-        self.NewClientStateSelection.setItemText(10, _translate("MainWindow", "CHANNEL 12"))
-        self.NewClientStateSelection.setItemText(11, _translate("MainWindow", "CHANNEL 13"))
-        self.NewClientStateSelection.setItemText(12, _translate("MainWindow", "CHANNEL 16"))
-        self.NewClientStateSelection.setItemText(13, _translate("MainWindow", "CHANNEL 17"))
-        self.NewClientStateSelection.setItemText(14, _translate("MainWindow", "CHANNEL 18"))
-        self.NewClientStateSelection.setItemText(15, _translate("MainWindow", "CHANNEL 19"))
-        self.NewClientStateSelection.setItemText(16, _translate("MainWindow", "CHANNEL 20"))
-        self.NewClientStateSelection.setItemText(17, _translate("MainWindow", "CHANNEL 21"))
-        self.NewClientStateSelection.setItemText(18, _translate("MainWindow", "CHANNEL 22"))
-        self.NewClientStateSelection.setItemText(19, _translate("MainWindow", "CHANNEL 23"))
-        self.NewClientStateSelection.setItemText(20, _translate("MainWindow", "CHANNEL 24"))
-        self.NewClientStateSelection.setItemText(21, _translate("MainWindow", "CHANNEL 25"))
-        self.NewClientStateSelection.setItemText(22, _translate("MainWindow", "CHANNEL 26"))
-        self.NewClientStateSelection.setItemText(23, _translate("MainWindow", "CHANNEL 27"))
+        self.assistant_state_label.setText(_translate("MainWindow", "LISTENING..."))
+        self.user_input_textedit.setHtml(_translate("MainWindow",
+                                                    "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                    "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                    "p, li { white-space: pre-wrap; }\n"
+                                                    "</style></head><body style=\" font-family:\'Geneva\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+                                                    "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">START SPEAKING SOMETHING</span></p></body></html>"))
+        self.gpio_label.setText(_translate("MainWindow", "GPIO:"))
+        self.channel_selection.setItemText(0, _translate("MainWindow", "CHANNEL 2"))
+        self.channel_selection.setItemText(1, _translate("MainWindow", "CHANNEL 3"))
+        self.channel_selection.setItemText(2, _translate("MainWindow", "CHANNEL 4"))
+        self.channel_selection.setItemText(3, _translate("MainWindow", "CHANNEL 5"))
+        self.channel_selection.setItemText(4, _translate("MainWindow", "CHANNEL 6"))
+        self.channel_selection.setItemText(5, _translate("MainWindow", "CHANNEL 7"))
+        self.channel_selection.setItemText(6, _translate("MainWindow", "CHANNEL 8"))
+        self.channel_selection.setItemText(7, _translate("MainWindow", "CHANNEL 9"))
+        self.channel_selection.setItemText(8, _translate("MainWindow", "CHANNEL 10"))
+        self.channel_selection.setItemText(9, _translate("MainWindow", "CHANNEL 11"))
+        self.channel_selection.setItemText(10, _translate("MainWindow", "CHANNEL 12"))
+        self.channel_selection.setItemText(11, _translate("MainWindow", "CHANNEL 13"))
+        self.channel_selection.setItemText(12, _translate("MainWindow", "CHANNEL 16"))
+        self.channel_selection.setItemText(13, _translate("MainWindow", "CHANNEL 17"))
+        self.channel_selection.setItemText(14, _translate("MainWindow", "CHANNEL 18"))
+        self.channel_selection.setItemText(15, _translate("MainWindow", "CHANNEL 19"))
+        self.channel_selection.setItemText(16, _translate("MainWindow", "CHANNEL 20"))
+        self.channel_selection.setItemText(17, _translate("MainWindow", "CHANNEL 21"))
+        self.channel_selection.setItemText(18, _translate("MainWindow", "CHANNEL 22"))
+        self.channel_selection.setItemText(19, _translate("MainWindow", "CHANNEL 23"))
+        self.channel_selection.setItemText(20, _translate("MainWindow", "CHANNEL 24"))
+        self.channel_selection.setItemText(21, _translate("MainWindow", "CHANNEL 25"))
+        self.channel_selection.setItemText(22, _translate("MainWindow", "CHANNEL 26"))
+        self.channel_selection.setItemText(23, _translate("MainWindow", "CHANNEL 27"))
         self.radioButton.setText(_translate("MainWindow", "DIGITAL"))
         self.radioButton_2.setText(_translate("MainWindow", "ANALOG"))
-        self.label_9.setText(_translate("MainWindow", "VALUE:"))
-        self.label_5.setText(_translate("MainWindow", "CONNECTED"))
+        self.value_label.setText(_translate("MainWindow", "VALUE:"))
+        self.raspbery_status_toast.setText(_translate("MainWindow", "CONNECTED"))
         self.label_4.setText(_translate("MainWindow", "  ©"))
         self.label_3.setText(_translate("MainWindow", " Ansh Patel · All Rights Reserved"))
 
