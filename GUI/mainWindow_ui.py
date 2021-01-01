@@ -9,7 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from voice_assistant.replica import *
+# from voice_assistant.replica import *
+from PyQt5.QtGui import QCursor
+
+from API.client import *
 
 
 class Ui_MainWindow(object):
@@ -426,8 +429,13 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.dropShadowFrame)
         MainWindow.setCentralWidget(self.centralwidget)
 
-        # Custom code below
+        #custom code below
 
+        self.check_connectivity()
+        self.send_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.assistant_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.radioButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.radioButton_2.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.assistant_button.clicked.connect(lambda: self.onVoiceAssistantClickEventHandler())
         self.send_button.clicked.connect(self.sendAPIRequests)
 
@@ -436,7 +444,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "FRIDAY"))
         self.label.setText(_translate("MainWindow", "FRIDAY"))
         self.label_2.setText(_translate("MainWindow", "A HACKABLE IOT ASSISTANT"))
         self.assistant_state_label.setText(_translate("MainWindow", "IDLE"))
@@ -456,7 +464,6 @@ class Ui_MainWindow(object):
         self.radioButton.setText(_translate("MainWindow", "DIGITAL"))
         self.radioButton_2.setText(_translate("MainWindow", "ANALOG"))
         self.value_label.setText(_translate("MainWindow", "VALUE:"))
-        self.raspbery_status_toast.setText(_translate("MainWindow", "CONNECTED"))
         self.label_4.setText(_translate("MainWindow", "  ©"))
         self.label_3.setText(_translate("MainWindow", " Ansh Patel · All Rights Reserved"))
 
@@ -485,6 +492,7 @@ class Ui_MainWindow(object):
                                                 'border-radius: 90')
 
     def sendAPIRequests(self):
+        self.send_button.setDisabled(True)
         if self.channel_selection.currentText() != '':
             MODE = ''
             channel_id = self.channel_selection.currentText()[8:]
@@ -496,7 +504,35 @@ class Ui_MainWindow(object):
             if self.radioButton_2.isChecked():
                 MODE = 'A'
             if MODE != '' and self.channel_selection.currentText() != ' ' and value != '':
-                pass
+                if MODE == 'D':
+                    digital_set_gpio(int(channel_id), int(value))
+                if MODE == 'A':
+                    analog_set_gpio(int(channel_id), int(value))
+        self.send_button.setDisabled(False)
+
+    def check_connectivity(self):
+        self.db_state = ''
+        # Custom code below
+        try:
+            self.db = mysql.connector.connect(
+                host="185.201.11.44",
+                user="u257284371_iot",
+                password="ansh1Rutu"
+            )
+            if self.db.is_connected():
+                self.db_state = True
+        except:
+            pass
+        if not self.db_state:
+            self.raspbery_status_toast.setText('OFFLINE')
+            self.raspbery_status_toast.setStyleSheet("font: 23pt \"Futura Bk BT\";\n"
+                                                     "color: rgb(255, 0, 0)")
+        else:
+            self.raspbery_status_toast.setText('CONNECTED')
+            self.raspbery_status_toast.setStyleSheet("font: 23pt \"Futura Bk BT\";\n"
+                                                     "color: rgb(34, 255, 61)")
+
+
 
 if __name__ == "__main__":
     import sys
