@@ -24,10 +24,10 @@ class Ui_MainWindow(object):
         self.dropShadowFrame = QtWidgets.QFrame(self.centralwidget)
         self.dropShadowFrame.setMinimumSize(QtCore.QSize(400, 720))
         self.dropShadowFrame.setStyleSheet("#dropShadowFrame {\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(9, 0, 113, 255), stop:0.852217 rgba(89, 0, 108, 255));\n"
-"}\n"
-"\n"
-"")
+                                           "background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(9, 0, 113, 255), stop:0.852217 rgba(89, 0, 108, 255));\n"
+                                           "}\n"
+                                           "\n"
+                                           "")
         self.dropShadowFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.dropShadowFrame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.dropShadowFrame.setObjectName("dropShadowFrame")
@@ -54,8 +54,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label.setFont(font)
         self.label.setStyleSheet("color: white; \n"
-"font: \"Abnes\";\n"
-"dropShadowFrame")
+                                 "font: \"Abnes\";\n"
+                                 "dropShadowFrame")
         self.label.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label.setFrameShadow(QtWidgets.QFrame.Plain)
         self.label.setLineWidth(0)
@@ -104,18 +104,18 @@ class Ui_MainWindow(object):
         self.pushButton.setMinimumSize(QtCore.QSize(180, 180))
         self.pushButton.setMaximumSize(QtCore.QSize(180, 180))
         self.pushButton.setStyleSheet("\n"
-"QPushButton\n"
-"{\n"
-"border-radius: 90px;\n"
-"background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(3, 4, 64, 255), stop:0.852217 rgba(49, 3, 61, 255));\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton:hover:!pressed\n"
-"{\n"
-"background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(2, 4, 48, 255), stop:0.852217 rgba(40, 3, 50, 255))\n"
-"\n"
-"}")
+                                      "QPushButton\n"
+                                      "{\n"
+                                      "border-radius: 90px;\n"
+                                      "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(3, 4, 64, 255), stop:0.852217 rgba(49, 3, 61, 255));\n"
+                                      "\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover:!pressed\n"
+                                      "{\n"
+                                      "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(2, 4, 48, 255), stop:0.852217 rgba(40, 3, 50, 255))\n"
+                                      "\n"
+                                      "}")
         self.pushButton.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/assets/assets/white-mic.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("color: white;\n"
-"font: 20pt \"Earth Orbiter\";")
+                                   "font: 20pt \"Earth Orbiter\";")
         self.label_6.setObjectName("label_6")
         self.verticalLayout_6.addWidget(self.label_6, 0, QtCore.Qt.AlignHCenter)
         self.verticalLayout_4.addWidget(self.frame_5, 0, QtCore.Qt.AlignHCenter)
@@ -171,8 +171,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("background: transparent;\n"
-"color: white;\n"
-"font: 20pt \"Geneva\";")
+                                    "color: white;\n"
+                                    "font: 20pt \"Geneva\";")
         self.textEdit.setReadOnly(True)
         self.textEdit.setObjectName("textEdit")
         self.horizontalLayout_2.addWidget(self.textEdit)
@@ -221,47 +221,71 @@ class Ui_MainWindow(object):
         self.NewClientStateSelection.setFont(font)
         self.NewClientStateSelection.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.NewClientStateSelection.setStyleSheet("QComboBox{\n"
-"  border: 2px solid rgb(0, 0, 96);\n"
-"  border-radius: 20px;\n"
-"  color: #FFF; \n"
-"  padding-left: 20px;\n"
-"  padding-right: 0px;\n"
-"  background-color:rgb(0, 0, 96);\n"
-"}\n"
-"QComboBox::drop-down{\n"
-"  background-color: transparent;\n"
-"  width: 40px;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"color: white;\n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"  border: 1px solid white;\n"
-"  border-radius: 5px;\n"
-"  selection-background-color: rgb(0, 0, 96);\n"
-"  font: 15pt \"Geneva\";\n"
-"  color: rgb(0, 0, 96);\n"
-"  selection-color: white;\n"
-"}\n"
-"QComboBox QAbstractItemView::item {\n"
-"  min-height: 50px;\n"
-"  border: 5px solid white;\n"
-"}\n"
-"\n"
-"QComboBox:disabled {\n"
-"    background-color: rgb(108, 135, 158);\n"
-"    border: 2px solid rgb(108, 135, 158);\n"
-"}\n"
-"\n"
-"QComboBox:editable {\n"
-"    background-color: rgb(0,0,96);\n"
-"    padding-right: 15px;\n"
-"    font: 15pt \"Geneva\";\n"
-"    color:white;\n"
-"}\n"
-"")
+                                                   "  border: 2px solid rgb(0, 0, 96);\n"
+                                                   "  border-radius: 20px;\n"
+                                                   "  color: #FFF; \n"
+                                                   "  padding-left: 20px;\n"
+                                                   "  padding-right: 0px;\n"
+                                                   "  background-color:rgb(0, 0, 96);\n"
+                                                   "}\n"
+                                                   "QComboBox::drop-down{\n"
+                                                   "  background-color: transparent;\n"
+                                                   "  width: 40px;\n"
+                                                   "}\n"
+                                                   "QComboBox::down-arrow {\n"
+                                                   "color: white;\n"
+                                                   "}\n"
+                                                   "QComboBox QAbstractItemView {\n"
+                                                   "  border: 1px solid white;\n"
+                                                   "  border-radius: 5px;\n"
+                                                   "  selection-background-color: rgb(0, 0, 96);\n"
+                                                   "  font: 15pt \"Geneva\";\n"
+                                                   "  color: rgb(0, 0, 96);\n"
+                                                   "  selection-color: white;\n"
+                                                   "}\n"
+                                                   "QComboBox QAbstractItemView::item {\n"
+                                                   "  min-height: 50px;\n"
+                                                   "  border: 5px solid white;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QComboBox:disabled {\n"
+                                                   "    background-color: rgb(108, 135, 158);\n"
+                                                   "    border: 2px solid rgb(108, 135, 158);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QComboBox:editable {\n"
+                                                   "    background-color: rgb(0,0,96);\n"
+                                                   "    padding-right: 15px;\n"
+                                                   "    font: 15pt \"Geneva\";\n"
+                                                   "    color:white;\n"
+                                                   "}\n"
+                                                   "")
         self.NewClientStateSelection.setEditable(True)
         self.NewClientStateSelection.setObjectName("NewClientStateSelection")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
+        self.NewClientStateSelection.addItem("")
         self.horizontalLayout_4.addWidget(self.NewClientStateSelection)
         self.verticalLayout_8.addWidget(self.frame_10)
         self.frame_11 = QtWidgets.QFrame(self.frame_9)
@@ -324,37 +348,37 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.NewClientName.setFont(font)
         self.NewClientName.setStyleSheet("QLineEdit {\n"
-"border: 2px solid rgb(0, 0, 96);\n"
-"border-radius: 20px;\n"
-"color: #FFF; \n"
-"padding-left: 20px;\n"
-"padding-right: 20px;\n"
-"background-color:rgb(0, 0, 96);\n"
-"} \n"
-"\n"
-"QLineEdit:enabled {\n"
-"border: 2px solid rgb(0, 0, 96);\n"
-"border-radius: 20px;\n"
-"color: #FFF; \n"
-"padding-left: 20px;\n"
-"padding-right: 20px;\n"
-"background-color:rgb(0, 0, 96);\n"
-"} \n"
-"\n"
-"\n"
-"QLineEdit:disabled {\n"
-"    background-color: rgb(108, 135, 158);\n"
-"    border: 2px solid rgb(108, 135, 158);\n"
-"}\n"
-"\n"
-"QLineEdit:hover { \n"
-"border: 2px solid rgb(15, 102, 255); \n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-" border: 2px solid rgb(85, 170, 255);\n"
-" background-color: rgb(0, 0, 96);\n"
-"}")
+                                         "border: 2px solid rgb(0, 0, 96);\n"
+                                         "border-radius: 20px;\n"
+                                         "color: #FFF; \n"
+                                         "padding-left: 20px;\n"
+                                         "padding-right: 20px;\n"
+                                         "background-color:rgb(0, 0, 96);\n"
+                                         "} \n"
+                                         "\n"
+                                         "QLineEdit:enabled {\n"
+                                         "border: 2px solid rgb(0, 0, 96);\n"
+                                         "border-radius: 20px;\n"
+                                         "color: #FFF; \n"
+                                         "padding-left: 20px;\n"
+                                         "padding-right: 20px;\n"
+                                         "background-color:rgb(0, 0, 96);\n"
+                                         "} \n"
+                                         "\n"
+                                         "\n"
+                                         "QLineEdit:disabled {\n"
+                                         "    background-color: rgb(108, 135, 158);\n"
+                                         "    border: 2px solid rgb(108, 135, 158);\n"
+                                         "}\n"
+                                         "\n"
+                                         "QLineEdit:hover { \n"
+                                         "border: 2px solid rgb(15, 102, 255); \n"
+                                         "}\n"
+                                         "\n"
+                                         "QLineEdit:focus {\n"
+                                         " border: 2px solid rgb(85, 170, 255);\n"
+                                         " background-color: rgb(0, 0, 96);\n"
+                                         "}")
         self.NewClientName.setObjectName("NewClientName")
         self.horizontalLayout_5.addWidget(self.NewClientName)
         self.verticalLayout_9.addWidget(self.frame_13)
@@ -380,7 +404,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("font: 23pt \"Futura Bk BT\";\n"
-"color: rgb(34, 255, 61)")
+                                   "color: rgb(34, 255, 61)")
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.verticalLayout_5.addWidget(self.label_5)
@@ -392,7 +416,7 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.frame.setFont(font)
         self.frame.setStyleSheet("border:0;\n"
-"color: white;")
+                                 "color: white;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -430,11 +454,12 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "FRIDAY"))
         self.label_2.setText(_translate("MainWindow", "A HACKABLE IOT ASSISTANT"))
         self.label_6.setText(_translate("MainWindow", "LISTENING..."))
-        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Geneva\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">START SPEAKING SOMETHING</span></p></body></html>"))
+        self.textEdit.setHtml(_translate("MainWindow",
+                                         "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                         "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                         "p, li { white-space: pre-wrap; }\n"
+                                         "</style></head><body style=\" font-family:\'Geneva\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+                                         "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">START SPEAKING SOMETHING</span></p></body></html>"))
         self.label_7.setText(_translate("MainWindow", "GPIO:"))
         self.NewClientStateSelection.setItemText(0, _translate("MainWindow", "CHANNEL 2"))
         self.NewClientStateSelection.setItemText(1, _translate("MainWindow", "CHANNEL 3"))
@@ -466,11 +491,13 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "CONNECTED"))
         self.label_4.setText(_translate("MainWindow", "  ©"))
         self.label_3.setText(_translate("MainWindow", " Ansh Patel · All Rights Reserved"))
-import resource_rc
 
+
+import resource_rc
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
