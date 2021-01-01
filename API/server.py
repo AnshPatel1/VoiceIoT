@@ -7,8 +7,27 @@ db = mysql.connector.connect(
     user="u257284371_iot",
     password="ansh1Rutu"
 )
-cursor  = db.cursor()
+cursor = db.cursor()
 
+
+def detect_change(response):
+    affected_gpio = response[9:]
+    print(response)
+    db.commit()
+    cursor.execute("SELECT RESPONSE FROM u257284371_iot.MESSAGES WHERE ID = 2;")
+    MODE = cursor.fetchone()[0]
+
+    if MODE == 'D':
+        cursor.execute(
+            "SELECT DIGITAL_STATUS FROM u257284371_iot.GPIO_STREAM WHERE GPIO_ID = {};".format(str(affected_gpio)))
+        state = cursor.fetchone()[0]
+        rpi_operate_gpio(affected_gpio, state, MODE)
+
+    if MODE == 'A':
+        cursor.execute(
+            "SELECT PWM_STATUS FROM u257284371_iot.GPIO_STREAM WHERE GPIO_ID = {};".format(str(affected_gpio)))
+        state = cursor.fetchone()[0]
+        rpi_operate_gpio(affected_gpio, state, MODE)
 
 
 def rpi_operate_gpio(pin, status, mode):
@@ -20,7 +39,6 @@ def rpi_operate_gpio(pin, status, mode):
     cursor.execute("UPDATE u257284371_iot.MESSAGES SET RESPONSE = 'UNCHANGED' WHERE ID = 1")
     db.commit()
     print('saved changes')
-
 
 
 while True:
