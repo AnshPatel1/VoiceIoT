@@ -103,19 +103,8 @@ class Ui_MainWindow(object):
         self.assistant_button = QtWidgets.QPushButton(self.frame_5)
         self.assistant_button.setMinimumSize(QtCore.QSize(180, 180))
         self.assistant_button.setMaximumSize(QtCore.QSize(180, 180))
-        self.assistant_button.setStyleSheet("\n"
-                                            "QPushButton\n"
-                                            "{\n"
-                                            "border-radius: 90px;\n"
-                                            "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(3, 4, 64, 255), stop:0.852217 rgba(49, 3, 61, 255));\n"
-                                            "\n"
-                                            "}\n"
-                                            "\n"
-                                            "QPushButton:hover:!pressed\n"
-                                            "{\n"
-                                            "background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(2, 4, 48, 255), stop:0.852217 rgba(40, 3, 50, 255))\n"
-                                            "\n"
-                                            "}")
+        self.assistant_button_stylesheet = "\nQPushButton\n{\nborder-radius: 90px;\nbackground: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(3, 4, 64, 255), stop:0.852217 rgba(49, 3, 61, 255));\n\n}\n\nQPushButton:hover:!pressed\n{\nbackground: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, stop:0 rgba(2, 4, 48, 255), stop:0.852217 rgba(40, 3, 50, 255))\n\n}"
+        self.assistant_button.setStyleSheet(self.assistant_button_stylesheet)
         self.assistant_button.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("assets/white-mic.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -436,8 +425,9 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.dropShadowFrame)
         MainWindow.setCentralWidget(self.centralwidget)
 
-
         # Custom code below
+
+        self.assistant_button.clicked.connect(lambda: self.onVoiceAssistantClickEventHandler())
 
 
         self.retranslateUi(MainWindow)
@@ -448,13 +438,19 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "FRIDAY"))
         self.label_2.setText(_translate("MainWindow", "A HACKABLE IOT ASSISTANT"))
-        self.assistant_state_label.setText(_translate("MainWindow", "LISTENING..."))
+        self.assistant_state_label.setText(_translate("MainWindow", "IDLE"))
         self.user_input_textedit.setHtml(_translate("MainWindow",
-                                                    "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                                    "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                    "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+                                                    "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n "
+                                                    "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+                                                    "type=\"text/css\">\n "
                                                     "p, li { white-space: pre-wrap; }\n"
-                                                    "</style></head><body style=\" font-family:\'Geneva\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
-                                                    "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">START SPEAKING SOMETHING</span></p></body></html>"))
+                                                    "</style></head><body style=\" font-family:\'Geneva\'; "
+                                                    "font-size:20pt; font-weight:400; font-style:normal;\">\n "
+                                                    "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; "
+                                                    "margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                                                    "text-indent:0px;\"><span style=\" color:#ffffff;\">"
+                                                    "CLICK THE MIC AND START SPEAKING</span></p></body></html>"))
         self.gpio_label.setText(_translate("MainWindow", "GPIO:"))
         self.radioButton.setText(_translate("MainWindow", "DIGITAL"))
         self.radioButton_2.setText(_translate("MainWindow", "ANALOG"))
@@ -463,7 +459,29 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "  ©"))
         self.label_3.setText(_translate("MainWindow", " Ansh Patel · All Rights Reserved"))
 
+    def updateUserVoiceInputArea(self, text):
+        self.user_input_textedit.setHtml(("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+                                            "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n "
+                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+                                            "type=\"text/css\">\n "
+                                            "p, li { white-space: pre-wrap; }\n"
+                                            "</style></head><body style=\" font-family:\'Geneva\'; "
+                                            "font-size:20pt; font-weight:400; font-style:normal;\">\n "
+                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; "
+                                            "margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                                            "text-indent:0px;\"><span style=\" color:#ffffff;\">"
+                                            "" + text + "</span></p></body></html>"))
 
+    def onVoiceAssistantClickEventHandler(self):
+        if self.assistant_state_label.text() == 'LISTENING...':
+            self.assistant_state_label.setText('IDLE')
+            self.assistant_button.setStyleSheet(self.assistant_button_stylesheet)
+        else:
+            self.assistant_state_label.setText('LISTENING...')
+            self.assistant_button.setStyleSheet('background: qlineargradient(spread:pad, x1:0, y1:1, '
+                                                'x2:0.975369, y2:0.0340909, stop:0 rgba(0, 0, 40, 255), stop:0.852217'
+                                                ' rgba(40, 3, 50, 255));\n'
+                                                'border-radius: 90')
 
 if __name__ == "__main__":
     import sys
