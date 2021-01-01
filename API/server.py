@@ -9,6 +9,20 @@ db = mysql.connector.connect(
 )
 cursor  = db.cursor()
 
+
+
+def rpi_operate_gpio(pin, status, mode):
+    # process raspberry pi gpio
+
+    # update changes after operating gpio
+    print('PIN: GPIO ' + str(pin) + '\nSTATUS: ' + str(status) + '\nMODE: ' + str(mode) + '\n')
+
+    cursor.execute("UPDATE u257284371_iot.MESSAGES SET RESPONSE = 'UNCHANGED' WHERE ID = 1")
+    db.commit()
+    print('saved changes')
+
+
+
 while True:
     cursor.execute("SELECT RESPONSE FROM u257284371_iot.MESSAGES WHERE ID = 1;")
     response = cursor.fetchone()
