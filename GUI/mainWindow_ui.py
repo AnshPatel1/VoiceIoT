@@ -429,7 +429,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.dropShadowFrame)
         MainWindow.setCentralWidget(self.centralwidget)
 
-        #custom code below
+        # custom code below
 
         self.check_connectivity()
         self.send_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
@@ -492,7 +492,6 @@ class Ui_MainWindow(object):
                                                 'border-radius: 90')
 
     def sendAPIRequests(self):
-        self.send_button.setDisabled(True)
         if self.channel_selection.currentText() != '':
             MODE = ''
             channel_id = self.channel_selection.currentText()[8:]
@@ -508,7 +507,6 @@ class Ui_MainWindow(object):
                     digital_set_gpio(int(channel_id), int(value))
                 if MODE == 'A':
                     analog_set_gpio(int(channel_id), int(value))
-        self.send_button.setDisabled(False)
 
     def check_connectivity(self):
         self.db_state = ''
@@ -531,7 +529,6 @@ class Ui_MainWindow(object):
             self.raspbery_status_toast.setText('CONNECTED')
             self.raspbery_status_toast.setStyleSheet("font: 23pt \"Futura Bk BT\";\n"
                                                      "color: rgb(34, 255, 61)")
-
 
 
 if __name__ == "__main__":
