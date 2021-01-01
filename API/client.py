@@ -23,7 +23,6 @@ def digital_set_gpio(gpio_id, state):
     db.commit()
 
 
-
 def analog_set_gpio(gpio_id, value):
     if not db.is_connected():
         print('DATABASE TIMED OUT. RECONNECTING......')
@@ -37,7 +36,6 @@ def analog_set_gpio(gpio_id, value):
     cursor.execute("UPDATE u257284371_iot.MESSAGES SET RESPONSE = 'A' WHERE ID = 2;")
     cursor.close()
     db.commit()
-
 
 
 while True:
