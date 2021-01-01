@@ -229,7 +229,7 @@ dropShadowFrame</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="assistant_button">
                <property name="minimumSize">
                 <size>
                  <width>180</width>
@@ -261,8 +261,8 @@ background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, s
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resource.qrc">
-                 <normaloff>:/assets/assets/white-mic.png</normaloff>:/assets/assets/white-mic.png</iconset>
+                <iconset>
+                 <normaloff>assets/white-mic.png</normaloff>assets/white-mic.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -273,7 +273,7 @@ background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, s
               </widget>
              </item>
              <item alignment="Qt::AlignHCenter">
-              <widget class="QLabel" name="label_6">
+              <widget class="QLabel" name="assistant_state_label">
                <property name="font">
                 <font>
                  <family>Earth Orbiter</family>
@@ -371,7 +371,7 @@ font: 20pt &quot;Earth Orbiter&quot;;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QTextEdit" name="textEdit">
+                 <widget class="QTextEdit" name="user_input_textedit">
                   <property name="font">
                    <font>
                     <family>Geneva</family>
@@ -453,7 +453,7 @@ p, li { white-space: pre-wrap; }
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_4">
                    <item>
-                    <widget class="QLabel" name="label_7">
+                    <widget class="QLabel" name="gpio_label">
                      <property name="maximumSize">
                       <size>
                        <width>48</width>
@@ -475,7 +475,7 @@ p, li { white-space: pre-wrap; }
                     </widget>
                    </item>
                    <item>
-                    <widget class="QComboBox" name="NewClientStateSelection">
+                    <widget class="QComboBox" name="channel_selection">
                      <property name="enabled">
                       <bool>true</bool>
                      </property>
@@ -710,7 +710,7 @@ QComboBox:editable {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QFrame" name="frame_12">
+                    <widget class="QFrame" name="radio_digital">
                      <property name="maximumSize">
                       <size>
                        <width>16777215</width>
@@ -790,7 +790,7 @@ QComboBox:editable {
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_5">
                       <item>
-                       <widget class="QLabel" name="label_9">
+                       <widget class="QLabel" name="value_label">
                         <property name="minimumSize">
                          <size>
                           <width>0</width>
@@ -818,7 +818,7 @@ QComboBox:editable {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLineEdit" name="NewClientName">
+                       <widget class="QLineEdit" name="value_line_edit">
                         <property name="enabled">
                          <bool>true</bool>
                         </property>
@@ -882,6 +882,35 @@ QLineEdit:focus {
                         </property>
                        </widget>
                       </item>
+                      <item>
+                       <widget class="QPushButton" name="send_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>35</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>35</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>assets/send.png</normaloff>assets/send.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>35</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
                      </layout>
                     </widget>
                    </item>
@@ -928,7 +957,7 @@ QLineEdit:focus {
               <number>0</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_5">
+              <widget class="QLabel" name="raspbery_status_toast">
                <property name="font">
                 <font>
                  <family>Futura Bk BT</family>
