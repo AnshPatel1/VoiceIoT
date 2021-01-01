@@ -261,8 +261,8 @@ background: qlineargradient(spread:pad, x1:0, y1:1, x2:0.975369, y2:0.0340909, s
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resources/resource.qrc">
-                 <normaloff>:/assets/white-mic.png</normaloff>:/assets/white-mic.png</iconset>
+                <iconset resource="resource.qrc">
+                 <normaloff>:/assets/assets/white-mic.png</normaloff>:/assets/assets/white-mic.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1041,7 +1041,7 @@ color: white;</string>
   </widget>
  </widget>
  <resources>
-  <include location="resources/resource.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>

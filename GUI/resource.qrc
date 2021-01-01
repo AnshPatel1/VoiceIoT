@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="assets">
+    <file>assets/down_arrow.png</file>
+    <file>assets/white-mic.png</file>
+  </qresource>
+</RCC>
