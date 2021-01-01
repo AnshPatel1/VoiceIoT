@@ -49,9 +49,6 @@ def run_friday():
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
-    # elif 'date' or 'day' in command:
-    #     date = datetime.date.today().strftime('%A')
-    #     talk('today is' + date)
     elif 'are you a robot' in command:
         talk('Consider me your friend')
     elif 'joke' in command:
@@ -70,12 +67,14 @@ def run_friday():
         run_friday()
     elif 'set analog pin' in command:
         command = command.replace('friday ', '')
+        value = ''
+        pin = 0
         if len(command) >= 21:
             if command[15:17].isnumeric():
                 pin = int(command[15:17])
             if command[20:].isnumeric():
                 value = int(command[20:])
-            if pin < 28 and pin not in [1, 14, 15]:
+            if pin < 28 and pin not in [1, 14, 15] and value != '' and pin != 0:
                 analog_set_gpio(pin, value)
                 talk("Analog Pin {} set to value : {}".format(pin, value))
         else:
