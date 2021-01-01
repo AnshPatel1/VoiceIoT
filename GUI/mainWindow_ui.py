@@ -436,6 +436,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.dropShadowFrame)
         MainWindow.setCentralWidget(self.centralwidget)
 
+
+        # Custom code below
+
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
