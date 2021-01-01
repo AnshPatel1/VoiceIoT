@@ -344,7 +344,7 @@ class Ui_MainWindow(object):
         self.value_line_edit.setMinimumSize(QtCore.QSize(0, 40))
         self.value_line_edit.setMaximumSize(QtCore.QSize(280, 40))
         font = QtGui.QFont()
-        font.setFamily("Product Sans")
+        font.setFamily("Geneva")
         font.setPointSize(11)
         self.value_line_edit.setFont(font)
         self.value_line_edit.setStyleSheet("QLineEdit {\n"
